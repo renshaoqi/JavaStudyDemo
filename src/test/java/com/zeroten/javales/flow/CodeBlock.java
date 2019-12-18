@@ -16,5 +16,6 @@ public class CodeBlock {
         Assert.assertEquals(AgeCheck.getAgeName(45), "中年");
         Assert.assertEquals(AgeCheck.getAgeName(60), "老年");
         Assert.assertEquals(AgeCheck.getAgeName(80), "老年");
+        Integer str1 = 3;
     }
 }
