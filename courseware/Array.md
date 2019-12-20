@@ -55,3 +55,23 @@ String[] arr2 = {"1", "2", "3"};
 3. Java 8 中新增的 Lambda 表达式
 
 示例：分别使用上述三种方式遍历数组 Integer[] arr = {1, 2 ,3, 4, 5};
+
+# 数组拷贝
+**Java 中数组拷贝常用的两种方式:**
+1. 使用工具类 Arrays.copyOf 或 Arrays.copyOfRange
+2. 使用底层方法 System.arraycopy
+
+示例:
+```java
+Integer[] arr1 = {1, 2, 3, 4, 5};
+Integer[] arr2 = {6, 7, 8, 9, 10};
+
+// 拷贝数组 arr1 的前 3 个元素
+Integer[] arr3 = Arrays.copyOf(arr1, 3);
+
+// 拷贝数组 arr1 的第 1 位到第 3 位的元素（不包括第 3 位）
+Integer[] arr4 = Arrays.copyOfRange(arr1, 0, 3);
+
+// 拷贝数组 arr2 的后 3 位到 arr1 的后 3 位
+System.arraycopy(arr2, arr1.length - 3, arr1, arr1.length - 3, 3)
+```
