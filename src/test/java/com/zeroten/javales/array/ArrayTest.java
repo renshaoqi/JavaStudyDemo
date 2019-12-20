@@ -23,6 +23,24 @@ public class ArrayTest {
         System.out.println(Arrays.toString(arr2));    // [false, false, false, false, false]
         String[] arr3 = new String[3];
         System.out.println(Arrays.toString(arr3));    // [null, null, null]
+    }
 
+    @Test
+    public void test数组遍历() {
+        Integer[] arr = {1, 2, 3, 4, 5};
+        // 1 for 循环
+        for (int index = 0; index < arr.length; index++) {
+            System.out.println(arr[index]);
+        }
+        System.out.println();
+        // 2 for each 循环
+        for(int val : arr) {
+            System.out.println(val);
+        }
+        System.out.println();
+        // Lambda 表达式
+        Arrays.asList(arr).forEach(val -> {
+            System.out.println(val);
+        });
     }
 }
