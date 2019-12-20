@@ -311,3 +311,4 @@ StringBuffer， 而 StringBuffer 低于 StringBuilder。
 **String 是否可以被继承？**
 
 &emsp;&emsp;String 不能被继承。因为 String 被声明为 final，所以不能被继承。
+
