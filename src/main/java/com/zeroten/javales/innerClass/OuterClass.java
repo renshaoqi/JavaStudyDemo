@@ -7,8 +7,43 @@ public class OuterClass {
     // public class InnerClass {}
     // protected class InnerClass {}
     // private class InnerClass {}
+    public int num = 1;
+
+    class Inner {
+        public int num = 2;
+
+        public void show() {
+            int num = 3;
+            System.out.println(num);
+            System.out.println(this.num);
+            System.out.println(OuterClass.this.num);
+        }
+    }
+
+
+
+    private static int a = 1;
     private Integer index;
     private String name;
+
+//    public static class Inner {
+//        public void test() {
+//            System.out.println(a);
+//        }
+//    }
+
+    public void outerWay() {
+//        int a = 2;
+        final int b = 3;
+        class Inner {
+            public void test1() {
+                System.out.println(a);
+            }
+        }
+
+        // 创建局部内部类的实例并调用方法
+        new Inner().test1();
+    }
 
     public OuterClass(int index, String name) {
         this.index = index;
@@ -88,8 +123,13 @@ public class OuterClass {
     }
 
     public static void main(String[] args) {
-        OuterClass outerClass = new OuterClass(1, "我是外围类");
-        OuterClass.InnerClass innerClass = outerClass.new InnerClass("我是内部类");
-        innerClass.print();
+//        OuterClass outerClass = new OuterClass(1, "我是外围类");
+//        OuterClass.InnerClass innerClass = outerClass.new InnerClass("我是内部类");
+//        innerClass.print();
+
+        OuterClass outer = new OuterClass(1, "my");
+        outer.outerWay();
+        OuterClass.Inner inner = outer.new Inner();
+        inner.show();
     }
 }
